@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public struct ChildBuilder<Content: View, Coordinator: CoordinatorProtocol>: BuilderProtocol {
+public struct BaseBuilder<Content: View, Coordinator: CoordinatorProtocol>: BuilderProtocol {
     
     @ObservedObject public var coordinator: Coordinator
     var content: () -> Content
