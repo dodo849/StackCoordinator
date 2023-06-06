@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @available(iOS 16.0, *)
-public protocol LinkProtocol: Hashable, Identifiable {
+public protocol LinkProtocol: Hashable, Identifiable, Equatable {
     func matchView() -> any View
 }
 
