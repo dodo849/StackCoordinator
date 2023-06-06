@@ -11,7 +11,7 @@ import SwiftUI
 @available(iOS 16.0, *)
 public protocol CoordinatorProtocol: ObservableObject, Hashable {
     associatedtype LinkType: LinkProtocol
-
+    
     var path: NavigationPath { get set }
     var sheet: LinkType? { get set }
     
@@ -19,6 +19,16 @@ public protocol CoordinatorProtocol: ObservableObject, Hashable {
 }
 
 extension CoordinatorProtocol {
+    static func == (
+        lhs: any CoordinatorProtocol,
+        rhs: any CoordinatorProtocol
+    ) -> Bool {
+        lhs.id == rhs.id ? true : false
+    }
+    
+    func hash(into hasher: inout Hasher) {
+    }
+    
     var id: String {
         String(describing: self)
     }
