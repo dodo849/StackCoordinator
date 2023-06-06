@@ -16,6 +16,11 @@ public protocol CoordinatorProtocol: ObservableObject, Hashable {
     var sheet: LinkType? { get set }
     
     init(path: Binding<NavigationPath>)
+    
+    static func == (lhs: Self, rhs: Self) -> Bool
+    func hash(into hasher: inout Hasher)
+    
+    var id: String { get }
 }
 
 extension CoordinatorProtocol {
