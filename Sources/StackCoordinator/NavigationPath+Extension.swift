@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension NavigationPath {
-    mutating func removeAll() {
+    public mutating func removeAll() {
         let count = self.count
         self.removeLast(count)
     }
