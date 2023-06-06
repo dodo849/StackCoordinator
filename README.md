@@ -15,7 +15,7 @@ CoordinatorKit can be installed using Swift Package Manager. Simply add it as a 
 update
 
 ## Requirements
-- iOS 16.0
+- iOS 16.0+
 - Swift 5.0+
 
 ## Contribution
