@@ -13,6 +13,8 @@ public class BaseCoordinator<L: LinkProtocol>: CoordinatorProtocol, Hashable {
     public var path = NavigationPathManager.shared.path
     @Published public var sheet: L?
     
+    public init() { }
+    
     public static func == (
         lhs: BaseCoordinator,
         rhs: BaseCoordinator
