@@ -10,7 +10,8 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 public protocol LinkProtocol: Hashable, Identifiable {
-    func matchView() -> any View
+    func matchView(
+    ) -> any View
 }
 
 public extension LinkProtocol {

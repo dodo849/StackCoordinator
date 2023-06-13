@@ -10,12 +10,8 @@ import SwiftUI
 
 public class BaseCoordinator<L: LinkProtocol>: CoordinatorProtocol, Hashable {
 
-    @Binding public var path: NavigationPath
+    public var path = NavigationPathManager.shared.path
     @Published public var sheet: L?
-    
-    public required init(path: Binding<NavigationPath>) {
-        _path = path
-    }
     
     public static func == (
         lhs: BaseCoordinator,
@@ -29,5 +25,13 @@ public class BaseCoordinator<L: LinkProtocol>: CoordinatorProtocol, Hashable {
     
     private var id: String {
         String(describing: self)
+    }
+}
+
+extension BaseCoordinator {
+    func push(_ link: L) {
+        self.path.append(
+            link
+        )
     }
 }

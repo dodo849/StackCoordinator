@@ -11,17 +11,19 @@ import SwiftUI
 @available(iOS 16.0, *)
 public struct RootBuilder<Content: View>: View  {
 
-    @State var path = NavigationPath()
+    @ObservedObject var pathManager = NavigationPathManager.shared
     var content: (Binding<NavigationPath>) -> Content
     
-    public init(@ViewBuilder content: @escaping (Binding<NavigationPath>) -> Content) {
+    public init(
+        @ViewBuilder content: @escaping (Binding<NavigationPath>) -> Content
+    ) {
          self.content = content
      }
 
     public var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $pathManager.path) {
             ZStack {
-                content($path)
+                content($pathManager.path)
             }
         }
     }
