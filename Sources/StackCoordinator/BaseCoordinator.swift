@@ -13,7 +13,7 @@ public class BaseCoordinator<L: LinkProtocol>: CoordinatorProtocol, Hashable {
     @Binding public var path: NavigationPath
     @Published public var sheet: L?
     
-    public init(path: Binding<NavigationPath>) {
+    public init() {
         _path = Binding<NavigationPath>(
             get: { NavigationPathManager.shared.path },
             set: { NavigationPathManager.shared.path = $0 }
