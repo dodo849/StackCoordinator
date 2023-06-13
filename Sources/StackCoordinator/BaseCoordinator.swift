@@ -31,7 +31,7 @@ public class BaseCoordinator<L: LinkProtocol>: CoordinatorProtocol, Hashable {
 }
 
 extension BaseCoordinator {
-    func push(_ link: L) {
+    public func push(_ link: L) {
         self.path.append(
             link
         )
