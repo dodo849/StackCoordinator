@@ -10,10 +10,15 @@ import SwiftUI
 
 public class BaseCoordinator<L: LinkProtocol>: CoordinatorProtocol, Hashable {
 
-    public var path = NavigationPathManager.shared.path
+    @Binding public var path: NavigationPath
     @Published public var sheet: L?
     
-    public init() { }
+    public init(path: Binding<NavigationPath>) {
+        _path = Binding<NavigationPath>(
+            get: { NavigationPathManager.shared.path },
+            set: { NavigationPathManager.shared.path = $0 }
+        )
+    }
     
     public static func == (
         lhs: BaseCoordinator,

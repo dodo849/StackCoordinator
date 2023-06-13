@@ -13,7 +13,10 @@ public struct BaseBuilder<Content: View, Coordinator: CoordinatorProtocol>: Buil
     @ObservedObject public var coordinator: Coordinator
     var content: () -> Content
     
-    public init(coordinator: Coordinator, @ViewBuilder content: @escaping () -> Content) {
+    public init(
+        coordinator: Coordinator,
+        @ViewBuilder content: @escaping () -> Content)
+    {
         self.coordinator = coordinator
         self.content = content
     }
