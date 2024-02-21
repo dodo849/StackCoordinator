@@ -50,7 +50,7 @@ enum SampleLink: LinkProtocol {
     func matchView() -> some View {
         switch self {
         case .firstView:
-            return FirstView() // Or You can use FirstViewBuilder()
+            return FirstView() // Use FirstViewBuilder() if the destination view also has a builder.
         case .secondView:
             return SecondView()
         }
