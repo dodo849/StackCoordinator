@@ -61,7 +61,7 @@ struct SampleBuilder: BuilderProtocol {
 3. Move to the view defined in the Link by appending the enum to the path from View or ViewModel.
 
 ```swift
-var coordinator: BaseCoordinator<HomeLink>
+var coordinator: BaseCoordinator<SampleLink>
 
 self.coordinator.path.append(
       SampleLink.firstView
