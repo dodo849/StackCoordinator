@@ -22,7 +22,7 @@ Now, StackCoordinator is ready to be used.
 
 ## How to use
 
-1. Create an enum that inherits from `LinkProtoco`l. This enum represents which pages can be navigated to from the current page. Define identifiers for views using case statements, and create the corresponding views in the matchView function.
+1. Create an enum that inherits from `LinkProtocol`. This enum represents which pages can be navigated to from the current page. Define identifiers for views using case statements, and create the corresponding views in the matchView function.
 
 ```swift
 import StackCoordinator
@@ -81,4 +81,4 @@ This package is only available for iOS 16.0+ because it uses [NavigationStack](h
 Contributions to CoordinatorKit are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
 ## License
-CoordinatorKit is available under the MIT license. See the [LICENSE](https://github.com/your/repo/blob/main/LICENSE) file for more info.
+CoordinatorKit is available under the MIT license. See the [LICENSE](https://github.com/dodo849/StackCoordinator/blob/main/LICENSE) file for more info.
