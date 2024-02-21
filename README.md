@@ -22,7 +22,22 @@ Now, StackCoordinator is ready to be used.
 
 ## How to use
 
-1. Create an enum that inherits from `LinkProtocol`. This enum represents which pages can be navigated to from the current page. Define identifiers for views using case statements, and create the corresponding views in the matchView function.
+1. Wrap the ContentView with RootBuilder at the top level.
+```swift
+@main
+struct SampleApp: App {
+    var body: some Scene {
+        WindowGroup {
+            RootBuilder { path in
+                ContentView(path: path)
+            }
+        }
+    }
+}
+```
+
+
+2. Create an enum that inherits from `LinkProtocol`. This enum represents which pages can be navigated to from the current page. Define identifiers for views using case statements, and create the corresponding views in the matchView function.
 
 ```swift
 import StackCoordinator
@@ -43,7 +58,7 @@ enum SampleLink: LinkProtocol {
 }
 ```
 
-2. Implement a view using `BuilderProtocol`. Use BaseCoordinator to create a coordinator using Link, and pass it to BaseBuilder. Then, pass the coordinator to the object requiring screen navigation (either View or ViewModel).
+3. Implement a view using `BuilderProtocol`. Use BaseCoordinator to create a coordinator using Link, and pass it to BaseBuilder. Then, pass the coordinator to the object requiring screen navigation (either View or ViewModel).
 
 ```swift
 struct SampleBuilder: BuilderProtocol {
@@ -58,7 +73,7 @@ struct SampleBuilder: BuilderProtocol {
 }
 ```
 
-3. Move to the view defined in the Link by appending the enum to the path from View or ViewModel.
+4. Move to the view defined in the Link by appending the enum to the path from View or ViewModel.
 
 ```swift
 var coordinator: BaseCoordinator<SampleLink>
