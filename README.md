@@ -93,7 +93,7 @@ This package is only available for iOS 16.0+ because it uses [NavigationStack](h
 - Swift 5.0+
 
 ## Contribution
-Contributions to CoordinatorKit are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+Contributions to StackCoordinator are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
 ## License
-CoordinatorKit is available under the MIT license. See the [LICENSE](https://github.com/dodo849/StackCoordinator/blob/main/LICENSE) file for more info.
+StackCoordinator is available under the MIT license. See the [LICENSE](https://github.com/dodo849/StackCoordinator/blob/main/LICENSE) file for more info.
