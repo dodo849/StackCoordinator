@@ -80,7 +80,7 @@ self.coordinator.push(
       SampleLink.firstView
 )
 // or
-coordinator.sheet = SampleLink.second
+coordinator.sheet = SampleLink.secondView
 ```
 
 You can perform all these steps for the views where you want to perform screen transitions.
