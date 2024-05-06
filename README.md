@@ -40,8 +40,6 @@ struct SampleApp: App {
 2. Create an enum that inherits from `LinkProtocol`. This enum represents which pages can be navigated to from the current page. Define identifiers for views using case statements, and create the corresponding views in the matchView function.
 
 ```swift
-import StackCoordinator
-
 enum SampleLink: LinkProtocol {
     
     case firstView
@@ -78,9 +76,11 @@ struct SampleBuilder: BuilderProtocol {
 ```swift
 var coordinator: BaseCoordinator<SampleLink>
 
-self.coordinator.path.append(
+self.coordinator.push(
       SampleLink.firstView
 )
+// or
+coordinator.sheet = SampleLink.second
 ```
 
 You can perform all these steps for the views where you want to perform screen transitions.
